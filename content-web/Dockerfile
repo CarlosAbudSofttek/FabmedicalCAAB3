@@ -1,7 +1,8 @@
 FROM node:dubnium-alpine AS base
 RUN apk -U add curl
 WORKDIR /usr/src/app
-EXPOSE 3000
+ENV CONTENT_API_URL http://localhost:3018
+EXPOSE 5018
 
 FROM node:dubnium AS build
 RUN npm install -g @angular/cli@~8.3.4

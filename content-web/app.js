@@ -6,7 +6,7 @@ const request = require('request');
 const app = express();
 
 app.use(express.static(path.join(__dirname, 'dist/content-web')));
-const contentApiUrl = process.env.CONTENT_API_URL || "http://localhost:3001";
+const contentApiUrl = process.env.CONTENT_API_URL || "http://104.40.7.100:3018";
 
 
 function getSessions(cb) {
@@ -73,7 +73,7 @@ app.get('/api/stats', function (req, res) {
 app.get('*', (req, res) => {
   res.sendFile(path.join(__dirname, 'dist/content-web/index.html'));
 });
-const port = process.env.PORT || '3000';
+const port =  process.env.PORT || '5018';
 app.set('port', port);
 
 const server = http.createServer(app);
